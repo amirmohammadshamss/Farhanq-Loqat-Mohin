@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">فرهنگ لغت دهخدا</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_drawer_heading_wordbook">فرهنگ لغت دهخدا</string>
+    <string name="nav_drawer_row_browse_wordbook">لیست لغات</string>
+    <string name="nav_drawer_row_favorites">لیست مورد علاقه</string>
+    <string name="nav_drawer_row_history">تاریخچه</string>
+    <string name="nav_drawer_heading_grammar">Sub Dic</string>
+    <string name="nav_drawer_row_browse_grammar">Browse</string>
+    <string name="nav_drawer_row_bookmarks">Bookmarks</string>
+    <string name="search_hint">جستجو لغت</string>
+    <string name="search_description">Dictionary entries</string>
+    <string name="search">Search</string>
+    <string name="action_clear_history">پاک کردن تاریخچه</string>
+    <string name="action_feedback">Send feedback</string>
+    <string name="title_wordbook">فرهنگ لغت دهخدا</string>
+    <string name="title_subdict">Sub Dic</string>
+    <string name="title_wordbook_browse">لیست لغات</string>
+    <string name="title_wordbook_favorites">علاقه مندی</string>
+    <string name="title_wordbook_history">تاریخچه</string>
+    <string name="title_subdict_browse">Browse</string>
+    <string name="title_subdict_bookmarks">Bookmarks</string>
+    <string name="toast_clear_history">تاریخچه پاک شد</string>
+    <string name="action_add_favorite">Add to favorites</string>
+    <string name="action_sound">Sound</string>
+    <string name="action_remove_favorite">حذف از لیست علاقه مندی</string>
+    <string name="toast_search_no_results">چیزی پیدا نشد</string>
+    <string name="action_add_bookmark">Add bookmark</string>
+    <string name="action_remove_bookmark">Remove bookmark</string>
+    <string name="action_help">سایت کد انواتو</string>
+    <string name="action_clear_favorites">پاک گردن علاقه مندی ها</string>
+    <string name="action_clear_bookmarks">Clear bookmarks</string>
+    <string name="feedback_email">Abdollah.kalmati@gmail.com</string>
+    <string name="feedback_subject">Dictionary Pro feedback</string>
+    <string name="feedback_intent_chooser">Send feedback via</string>
+    <string name="toast_clear_wordbook_favorites">لیست علاقه مندی ها پاک شد</string>
+    <string name="clear_wordbook_favorites_dialog_message">آیا برای پاک کردن لیست علاقه مندی ها مطمین هستید؟!</string>
+    <string name="ok">تایید</string>
+    <string name="cancel">لغو</string>
+    <string name="clear_subdict_bookmarks_dialog_message">Are you sure you want to permanently clear your bookmarks list?</string>
+    <string name="toast_clear_subdict_bookmarks">Bookmarks cleared.</string>
+    <string name="toast_favorite_added">به لیست علاقه مندی اضافه شد</string>
+    <string name="toast_favorite_removed">از لیست علاقه مندی حذف شد.</string>
+    <string name="toast_bookmark_added">Bookmark added.</string>
+    <string name="toast_bookmark_removed">Bookmark removed.</string>
+    <string name="wordbook_favorites_empty_view">
+       موردی به علاقه مندی ها اضافه نشده !
+    </string>
+    <string name="wordbook_history_empty_view">تاریخچه ای وجود ندارد!</string>
+    <string name="subdict_bookmarks_empty_view">
+        Tap the Bookmark icon to save your favorite sections to this list.
+    </string>
+    <string name="title_help">سایت کد انواتو</string>
+    <string name="message_help">
+<![CDATA[
+        <p>
+         برای حمایت از ما به برنامه ما تو بازار نظردهید
+        </p>
+
+        </p>
+        ]]>
+    </string>
+    <string name="title_about">درباره برنامه</string>
+    <!--
+         NOTE: I'm currently displaying the following string in a TextView, not a WebView, so some
+         of these tags are ignored, and I've added a few extra <br> tags in the list at the end.
+    -->
+    <string name="message_about">
+<![CDATA[
+        <p>
+        برنامه فرهنگ لغت دهخدا کاری از گروه ایلیا گستر میباشد
+        </p>
+        ]]>
+    </string>
+    <string name="subdict_footer">
+<![CDATA[
+        <p></p>
+        ]]>
+    </string>
+
+    <string name="apache_license" tools:ignore="TypographyOther">
+        <![CDATA[
+"
+<pre style="word-wrap: break-word; white-space: pre-wrap;">
+
+</pre>"
+        ]]>
+    </string>
+    <string name="pref_textSize">اندزه فونت</string>
+    <string name="title_activity_settings">تنظیمات</string>
+    <string name="pref_textSize_item_small">Small</string>
+    <string name="pref_textSize_item_medium">Medium</string>
+    <string name="pref_textSize_item_large">Large</string>
+    <string name="settings">تنظیمات</string>
+    <string name="pref_textSize_key">PREF_TEXT_SIZE_KEY</string>
+    <string name="version">"Version 1.2"</string>
+    <string name="pref_about_key">PREF_ABOUT_KEY</string>
+    <string name="pref_onePane_key">PREF_ONE_PANE_KEY</string>
+    <string name="pref_onePane">Hide word list</string>
+    <string name="pref_onePane_summary">
+        Hide the left pane displaying the list of words in Browse mode
+    </string>
+    <string name="action_viewonweb_tool">View on Website</string>
+    <string name="subtitle_viewonweb_tool">Website Dictionary</string>
+    <string name="webview_error">"Error: "</string>
+    <string name="dialog_no_network_connection">
+        "You must be connected to the Internet to use this feature."
+    </string>
+    <string name="pref_viewonweb_tool_key">PREF_VIEWONWEB_TOOL_KEY</string>
+    <string name="pref_viewonweb_tool">Hide \"View on Website\" option</string>
+    <string name="pref_typeface_key">PREF_TYPEFACE_KEY</string>
+    <string name="pref_typeface">Typeface</string>
+    <string name="pref_typeface_notoSerif">Noto Serif</string>
+    <string name="pref_typeface_roboto">Roboto</string>
+    <string name="pref_typeface_default">@string/pref_typeface_roboto</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!-- Parse Push Notification Application ID and Client Key -->
+    <string name="parse_application_id">0RZ9VMxv8VNIUkR6UMEJlD3q8bTGfiyQq2pANW5K</string>
+    <string name="parse_client_key">V3MRE1QKNFigd1r9uZGKKdfKUsLV2rRNsb7WYtZv</string>
+</resources>

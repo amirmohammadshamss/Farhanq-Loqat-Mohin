@@ -1,113 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="ir.iliya.farhanglogat"
-
-    android:installLocation="auto">
-
-    <supports-screens
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:smallScreens="true"
-        android:xlargeScreens="true" />
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> <!-- optional -->
-
-
-
-    <application
-        android:name=".G"
-        android:allowBackup="true"
-        android:icon="@drawable/app_icon"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:supportsRtl="true"
-        tools:ignore="UnusedAttribute">
-        <activity
-            android:name="ir.iliya.farhanglogat.SplashActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:allowBackup="true" android:icon="@drawable/app_icon"
+        android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="ir.iliya.farhanglogat.MainActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop">
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-            </activity>
-        <activity
-            android:name="ir.iliya.farhanglogat.wordbook.WordbookDetailActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName="ir.iliya.farhanglogat.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ir.iliya.farhanglogat.MainActivity" />
-        </activity>
-        <activity
-            android:name="ir.iliya.farhanglogat.subdict.SubdictDetailActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName="ir.iliya.farhanglogat.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:screenOrientation="portrait"
-                android:value="ir.iliya.farhanglogat.MainActivity" />
-        </activity>
-        <activity
-            android:name="ir.iliya.farhanglogat.SettingsActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_settings">
-        </activity>
-        <activity android:name="ir.iliya.farhanglogat.wordbook.ViewonwebToolActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <provider
-            android:name="ir.iliya.farhanglogat.data.wordbook.WordbookProvider"
-            android:authorities="ir.iliya.farhanglogat.data.wordbook.WordbookProvider"
-            android:exported="false"/>
-        <provider
-            android:name="ir.iliya.farhanglogat.data.appdata.WordbookFavoritesProvider"
-            android:authorities="ir.iliya.farhanglogat.data.appdata.WordbookFavoritesProvider"
-            android:exported="false"/>
-        <provider
-            android:name="ir.iliya.farhanglogat.data.appdata.WordbookHistoryProvider"
-            android:authorities="ir.iliya.farhanglogat.data.appdata.WordbookHistoryProvider"
-            android:exported="false"/>
-        <provider
-            android:name="ir.iliya.farhanglogat.data.subdict.SubdictProvider"
-            android:authorities="ir.iliya.farhanglogat.data.subdict.SubdictProvider"
-            android:exported="false"/>
-        <provider
-            android:name="ir.iliya.farhanglogat.data.appdata.SubdictBookmarksProvider"
-            android:authorities="ir.iliya.farhanglogat.data.appdata.SubdictBookmarksProvider"
-            android:exported="false"/>
-
-        <!--This meta-data tag is required to use Google Play Services.-->
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <!--Include the AdActivity configChanges and theme. -->
-        <activity android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-
-        <activity
-            android:name="ir.adad.client.AdadActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent"/>
-        <meta-data
-            android:name="AdadToken"
-            android:value="fc6c794d5ec448a08b4d5b3a754346cb"/>
     </application>
-
 </manifest>

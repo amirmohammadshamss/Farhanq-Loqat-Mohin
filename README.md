@@ -1,7 +1,62 @@
-# Farhanq-Loqat-Mohin
-This app was published in cafebazar 5 years ago.
+# Farhang Logat — Kotlin and Jetpack Compose
 
-![Screenshot_1534519970 Small](https://user-images.githubusercontent.com/93222040/235364071-c84842db-6ca9-4f01-9c47-b67186d4298c.jpeg)
-![Screenshot_1534571023 Small](https://user-images.githubusercontent.com/93222040/235364085-a9570301-d3c6-4184-a6ba-4d6c68134e6d.jpeg)
-![Screenshot_1534571031 Small](https://user-images.githubusercontent.com/93222040/235364095-f4c0c2cc-5fd4-4380-9186-2eb98e4fd43b.jpeg)
-![Screenshot_1534571401 Small](https://user-images.githubusercontent.com/93222040/235364111-b0b297d9-1a6e-431e-bd3c-d92144b72bf1.jpeg)
+An offline Persian dictionary, migrated from Java and the Android Support Library to
+Kotlin, Jetpack Compose Material 3, and AndroidX.
+
+- Android 17: compile/target SDK 37; Android 6.0+ supported (min SDK 23).
+- Android Gradle Plugin 9.1.1, Gradle 9.3.1, Java 17, built-in Kotlin 2.2.10,
+  matching Kotlin Compose compiler plugin, Compose BOM 2026.03.00.
+- Persian RTL interface, system dark mode, edge-to-edge layout, and resizable windows.
+- Offline search and paged browsing of the original 36,098 dictionary entries.
+- Word details, selectable definitions, sharing, favorites, recent history,
+  supplementary dictionary, bookmarks, and adjustable reading size.
+- Database work runs on a dedicated background executor. ViewModel state survives
+  rotation; SavedStateHandle restores the query, collection, and detail after recreation.
+
+## Build
+
+Install a compatible Android Studio, Java 17, SDK Platform 37, and Android SDK
+Build Tools 36.0.0 through SDK Manager. Set `sdk.dir` in your own `local.properties`
+(or configure `ANDROID_HOME`). The checked-in legacy Windows SDK path is obsolete.
+
+```sh
+./gradlew :DictionaryPro:assembleDebug :DictionaryPro:lintDebug
+./gradlew :DictionaryPro:connectedDebugAndroidTest
+```
+
+The second command requires a connected Android device or emulator. Repository tests
+use an isolated database directory and exercise search, pagination, saved-data
+persistence, and migration from the original version 2 favorites schema.
+
+The debug APK is generated at
+`DictionaryPro/build/outputs/apk/debug/DictionaryPro-debug.apk`.
+
+## Updating existing installations
+
+The application ID remains `ir.iliya.farhanglogat`; version code increases from 5 to 6.
+Existing `AppData.db` favorites, history, and bookmarks are preserved. Older favorites
+stored only by word are resolved to dictionary IDs without dropping the table.
+Bundled dictionary archives are unchanged, with stable entry IDs. Fresh read-only
+copies use separate filenames so existing dictionary files are not overwritten.
+
+To publish an update, sign it with the **original release key**. The optional ignored
+`release.properties` file supports the existing `keyStore`, `keyStorePassword`,
+`keyAlias`, and `keyAliasPassword` properties. Without it, release output is unsigned.
+
+Obsolete Adad/Google Ads integrations and their network/location permissions have
+been removed. The bundled pronunciation asset is only `dummy.mp3`, so the new UI
+omits the nonfunctional audio button. The old embedded web lookup is omitted;
+definitions can be shared with other apps. Font-family selection and the old tablet
+split-pane setting are replaced by system typography and a resizable single-pane UI.
+The original sources and resources are preserved in `legacy/` and are not compiled.
+
+## Validation status
+
+Both original SQLite archives pass `PRAGMA integrity_check`; dictionary counts and
+plain-text definition formats were checked locally. A full APK build, Android lint,
+and device tests still need to run: no Android SDK is installed in the migration
+environment, SDK downloads returned HTTP 404, and the Gradle distribution download
+could not complete in a practical time. No APK or device compatibility claim is made.
+
+Android SDK configuration reference:
+https://developer.android.com/about/versions/17/setup-sdk
