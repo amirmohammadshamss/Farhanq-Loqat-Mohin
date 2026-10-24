@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <color name="green_primary">#373739</color>
-    <color name="green_accent_dark">#57575b</color>
-    <color name="green_accent_light">#6d6d70</color>
-    <color name="green_accent_alt" tools:ignore="UnusedResources">#FAFAFA</color>
-</resources>

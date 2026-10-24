@@ -17,7 +17,7 @@ Kotlin, Jetpack Compose Material 3, and AndroidX.
 
 Install a compatible Android Studio, Java 17, SDK Platform 37, and Android SDK
 Build Tools 36.0.0 through SDK Manager. Set `sdk.dir` in your own `local.properties`
-(or configure `ANDROID_HOME`). The checked-in legacy Windows SDK path is obsolete.
+(or configure `ANDROID_HOME`). Local SDK configuration is excluded from Git.
 
 ```sh
 ./gradlew :DictionaryPro:assembleDebug :DictionaryPro:lintDebug
@@ -44,19 +44,19 @@ To publish an update, sign it with the **original release key**. The optional ig
 `keyAlias`, and `keyAliasPassword` properties. Without it, release output is unsigned.
 
 Obsolete Adad/Google Ads integrations and their network/location permissions have
-been removed. The bundled pronunciation asset is only `dummy.mp3`, so the new UI
-omits the nonfunctional audio button. The old embedded web lookup is omitted;
+been removed. Pronunciation audio is unavailable, so the UI omits the audio button.
+The old embedded web lookup is omitted;
 definitions can be shared with other apps. Font-family selection and the old tablet
 split-pane setting are replaced by system typography and a resizable single-pane UI.
-The original sources and resources are preserved in `legacy/` and are not compiled.
+The archived Java sources, XML layouts, old build configuration, advertising JAR,
+audio placeholder, IDE module files, and old release APK have been removed.
 
 ## Validation status
 
 Both original SQLite archives pass `PRAGMA integrity_check`; dictionary counts and
-plain-text definition formats were checked locally. A full APK build, Android lint,
-and device tests still need to run: no Android SDK is installed in the migration
-environment, SDK downloads returned HTTP 404, and the Gradle distribution download
-could not complete in a practical time. No APK or device compatibility claim is made.
+plain-text definition formats were checked locally. The debug APK builds successfully,
+its signature verifies, and the app launches in an Android 17 ARM64 emulator without
+reported crashes. Android lint and the instrumented test suite have not yet run.
 
 Android SDK configuration reference:
 https://developer.android.com/about/versions/17/setup-sdk
