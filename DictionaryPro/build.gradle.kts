@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
@@ -21,7 +23,7 @@ android {
     }
     val signingFile = rootProject.file("release.properties")
     if (signingFile.exists()) {
-        val properties = java.util.Properties().apply { signingFile.inputStream().use { load(it) } }
+        val properties = Properties().apply { signingFile.inputStream().use { load(it) } }
         signingConfigs {
             create("release") {
                 storeFile = rootProject.file(properties.getProperty("keyStore"))
